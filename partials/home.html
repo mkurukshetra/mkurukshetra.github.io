@@ -1,0 +1,75 @@
+<style>
+.footer{
+  top:0;
+}
+</style>
+<!--put components here -->
+<div class="container col-md-12 col-xs-12">
+ <div class="col-md-3 col-xs-12">
+  <div class="col-md-12 col-xs-12 clearfix paddingReset badgeEventsContainer">
+    <ul class="col-md-12 col-xs-12 paddingReset">
+      <div class="col-md-4 col-xs-4 ">
+        <li class="badgeEvent ">
+          <a href="#/comingsoon"><i class="fa fa-star"></i>
+            <h5 style="color:#fff">STARTUP WEEKEND</h5>
+          </a>
+        </li>
+      </div>
+      <div class="col-md-4 col-xs-4 ">
+        <li class="badgeEvent ">
+          <a href="#/comingsoon"><i class="fa fa-bullhorn"></i>
+            <h5 style="color:#fff">BARKAMP</h5>
+          </a>
+        </li>
+
+      </div>
+      <div class="col-md-4 col-xs-4 ">
+        <li class="badgeEvent ">
+          <a href="#/sa"><i class="fa fa-graduation-cap"></i>
+            <h5 style="color:#fff"><b>STUDENT AMBASSADOR</b></h5>
+          </a>
+        </li>
+      </div>
+      <!-- <div class="col-md-4 col-xs-4 ">
+        <li class="badgeEvent ">
+          <a href="#/comingsoon"><i class="fa fa-calendar"></i>
+            <h5 style="color:#fff">SCHEDULE</h5>
+          </a>
+        </li>
+      </div>
+      <div class="col-md-4 col-xs-4 ">
+        <li class="badgeEvent ">
+         <a href="#/comingsoon"><i class="fa fa-quote-right"></i>
+            <h5 style="color:#fff">K! BLOG</h5>
+          </a>
+        </li>
+      </div>
+
+      <div class="col-md-4 col-xs-4 ">
+        <li class="badgeEvent ">
+          <a href='#/comingsoon'><i class="fa fa-tag"></i>
+            <h5 style="color:#fff">PROJECTS</h5>
+          </a>
+        </li>
+      </div> -->
+    </ul>
+  </div>
+</div>
+ <div class="col-md-3 col-xs-12">
+      <div class="update-box" ng-controller="updateController">
+        <p></p>        
+      </div>
+</div>
+</div>
+<script>
+$(document).ready(function(){
+setTimeout(function(){
+$(".typed-cursor").css({'font-size':"1.3rem"});
+},17500);
+$(".home-event-circle").find(".circle-icon").removeClass("selectedNavElem");
+$(".home-event-circle").removeClass("removeBB");
+$("#home").addClass("selectedNavElem");
+$("#home").parent().parent().addClass("removeBB");
+
+});
+</script>

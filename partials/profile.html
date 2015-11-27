@@ -1,0 +1,131 @@
+<div class="updateController">
+	<form method="post" ng-submit="updateProfile()">
+	<div class="glContainer container paddingReset clearfix">
+		<div class="ribbontitle ">
+<div class="row">
+<div class="col-md-8">
+
+	<h1 > Hey there, <input type="text" style="font-size:4rem; width:auto;" placeholder="[Your Name]" ng-model="user.displayName"> </input>
+		</h1>
+</div>
+<div class="col-md-4">
+<h1  style="padding-top:27px">k! id: {{kid}}</h1>
+</div>
+</div>
+
+</div>
+
+		<div class="profile col-md-10 col-md-push-1 col-xs-12 clearfix">
+			<p>
+			</span> Email Id<input type="email" placeholder="[email id]" ng-model="user.email" disabled/>
+			 
+			 City <input type="text" placeholder="[City]" ng-model="user.city" required/> State <input type="text" placeholder="[State]" ng-model="user.state" required/>Country <input type="text" placeholder="[Country]" ng-model="user.country" required/></span> Phone Number<input type="text" placeholder="Phone Number" ng-model="user.contact" required/>
+			 </p>
+			 <p>
+				</span> Student Ambassador Referral ( if any ) <input type="text" placeholder="[SA name]"/></span>
+			 </p>
+			 <p>
+			 	Participant Type
+			 	<br/>
+			 	<input id='student' class="participant" name="student" type="radio" value="college" ng-model="user.type_of_user" required/><span class="gender">College</span>
+			 	<br/>
+			 	<input id='school' class="participant" name="student" type="radio" value="school" ng-model="user.type_of_user"/><span class="gender">School</span>
+			 	<br/>
+			 	<input id='working' class="participant" name="student" type="radio" value="working" ng-model="user.type_of_user"/><span class="gender">Working</span>
+			 	<br/>
+			 </p>
+			<div class="details student-details"><br>
+			<p>Year
+			 <select ng-model="user.year" id="student-year" class="selection">
+				 	<option value="" default selected>Year</option>
+				 	<option value="1">1</option>
+				 	<option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+				 </select>
+				</p>
+<br/>
+				 <p>College<select class= "selection" id="student-college" type="text" placeholder="[College]" ng-model="user.college" ng-options="college as college for college in colleges" class="selection">
+				 	 <option value="" default selected>College</option>
+				 </select></p><br>
+				 <div class="row">
+				 <div class="col-md-6">
+				 </div>
+				 <div class="col-md-6"></div>
+				 </div>
+				 <p>Course <select type="text" id="student-course" ng-model="user.course" ng-options="course as course for course in courses" class="selection">
+				 	 <option value="" default selected>Course</option>
+				 </select><br><br>
+				 </p>
+			</div>
+
+			<div class="details school-details">
+				 <p>School<input type="text" id="school-name" placeholder="[School Name]" ng-model="user.school"/>Grade <span class="detail"><input id="school-grade" type="text" placeholder="[Which grade are you in?]" ng-model="user.standard"/>
+				 </p>
+			</div>
+			<div class="details working-details">
+				 <p>Company<input id="company-name" type="text" placeholder="[Company Name]" ng-model="user.company"/>Designation <span id="company-des" class="detail"><input type="text" placeholder="[Enter your designation]" ng-model="user.designation"/>
+				 </p>
+			</div> 
+			 <p>
+			 <button class="updatebtn btn btn-success btn-lg">UPDATE</button>
+			 </p>
+		</div>
+	</div>
+</form>
+</div>
+<style id="optionDay">
+</style>
+<script>
+$(document).ready(function(){
+
+var date = new Date();
+ var hours = date.getHours();
+ //var ampm = hours >= 12 ? 'pm' : 'am';
+  console.log('time'+hours);
+ if( hours>=7 && hours <= 17)
+ {	
+
+ 	document.getElementById('optionDay').innerHTML='option{background-color:#1F4879;}';
+ }
+
+$(".home-event-circle").find(".circle-icon").removeClass("selectedNavElem");
+$(".home-event-circle").removeClass("removeBB");
+$("#loginNav").find(".circle-icon").addClass("selectedNavElem");
+$("#loginNav").addClass("removeBB");
+$(".details").fadeOut(0);
+
+setTimeout(function(){
+	//alert("booya");
+}, 3000);
+if(document.getElementById('student').checked) {
+$(".student-details").fadeIn(100);
+}
+else if(document.getElementById('school').checked) {
+ $(".school-details").fadeIn(100);
+ }
+ else if(document.getElementById('working').checked) {
+  $(".working-details").fadeIn(100);
+ }
+
+
+$(".participant").click(function(){
+	var pid = $(this).attr("id");
+	$(".details").fadeOut(0);
+	$("."+pid+"-details").fadeIn(100); 
+});
+console.log("pre exec");
+});
+
+$(window).load(function(){ 
+
+console.log("post exec");
+if(document.getElementById('student').checked) {
+$(".student-details").fadeIn(100);
+}
+else if(document.getElementById('school').checked) {
+ $(".school-details").fadeIn(100);
+ }
+ else if(document.getElementById('working').checked) {
+  $(".working-details").fadeIn(100);
+ }
+});
+</script>

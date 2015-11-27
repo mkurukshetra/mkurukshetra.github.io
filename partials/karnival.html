@@ -1,0 +1,53 @@
+<div class="paddingReset col-md-12 col-xs-12 container karContainer" ng-controller="karnivalController">
+    <div class="col-md-12 col-xs-12 paddingReset clearfix">
+      <h1 class="col-md-12 col-xs-12 text-center"><span class="shape ribbontitle">K</span>
+          <span class="shape ribbontitle">!</span>
+          <span class="shape ribbontitle">A</span>
+          <span class="shape ribbontitle">R</span>
+          <span class="shape ribbontitle">N</span>
+          <span class="shape ribbontitle">I</span>
+          <span class="shape ribbontitle">V</span>
+          <span class="shape ribbontitle">A</span>
+          <span class="shape ribbontitle">L</span>
+      </h1>
+      <ul class="karCircles">
+        <div class="col-md-3 col-xs-12" ng-repeat="node in nodes|  orderObjectBy:'title':false">
+          <li ng-click="clicked(node.title,node.id)" class="karCircle" >
+            <img src="images/patterns/bluesparks1.png"/>
+            <div class="overlayContainer">
+              <div class="karTitle"><p>{{node.title}}</p></div>
+              <div class="slice slice1"></div>
+              <div class="slice slice2"></div>
+              <div class="slice slice3"></div>
+              <div class="slice slice4"></div>
+            </div>
+          </li>
+        </div>
+      </ul>
+    </div>
+  
+<div class="col-md-6 col-md-push-2 col-xs-12 karBox">
+  <div class="topPage">
+    <i class="fa fa-times closeme fa-2x"></i>
+    <div class="karImCircle">
+      <img src="images/patterns/congruent_pentagon.png" />
+    </div>
+    <div class="karDetails">
+    <div class="text-center">{{clickedName}}</div>
+    <div class="text-center">{{venue}}</div>
+    <div class="text-center"><span>{{date}}</span>
+        <span>{{Time}}</span>
+     </div>
+   </div>
+    <p ng-bind-html="desc"></p>
+  </div>
+</div>
+</div>
+<script>
+$(document).ready(function(){
+$(".home-event-circle").find(".circle-icon").removeClass("selectedNavElem");
+$(".home-event-circle").removeClass("removeBB");
+$("#karnival").addClass("selectedNavElem");
+$("#karnival").parent().parent().addClass("removeBB");
+});
+</script>
