@@ -166,6 +166,7 @@
   });
   function toggle_stuff()
   {
+    $("html,body").animate({'scrollTop':"0"},100);
     $(".top-bar").toggleClass("top-bar-anim");
     $(".middle-bar").toggleClass("middle-bar-anim");
     $(".bottom-bar").toggleClass("bottom-bar-anim");
