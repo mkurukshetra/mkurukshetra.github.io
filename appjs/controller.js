@@ -808,16 +808,17 @@ $scope.tabs = [];
 $scope.eventName = '';
 $http({method: 'GET', url: 'http://cms.kurukshetra.org.in/xceeds.json'}).success(function(data)
 				   {
-				   		for(var i=0;i<data.length;i++)
-				   		{
-				   			if(data[i]['city_id'] == 1)
+				   	 for(var i=0;i<data.length;i++)
+				   		{	//a'bad
+				   			if(data[i]['city_id'] == 5)
 				   				$scope.events1.push(data[i]['name']);
-				   			if(data[i]['city_id'] == 2)
-				   				$scope.events2.push(data[i]['name']);
-				   			if(data[i]['city_id'] == 3)
-				   				$scope.events3.push(data[i]['name']);
-				   			if(data[i]['city_id'] == 4)
+							//blore
+				   			if(data[i]['city_id'] == 6)
 				   				$scope.events4.push(data[i]['name']);
+                                                        //new xceed
+				   			if(data[i]['city_id'] == 6)
+				   				$scope.events3.push(data[i]['name']);
+
 				   		console.log(data[i]['name']);
 				   		}
 				   		console.log($scope.events1.length);
